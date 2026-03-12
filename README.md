@@ -111,12 +111,9 @@ energy-consumption-forecasting/
 
 | Model | MAE | RMSE | MAPE |
 |---|---|---|---|
-| ARIMA | — | — | — |
-| Prophet (Baseline) | — | — | — |
-| Prophet (Tuned) | — | — | — |
-| LSTM | — | — | — |
-
-*Fill in your metric values from the CSV files in `results/`.*
+| ARIMA(3,1,3) | 5,837 MW | 6,654 MW | 19.99% |
+| Prophet (Tuned) | 2,461 MW | 3,328 MW | 7.41% |
+| LSTM (PyTorch) | 1,484 MW | 1,952 MW | 4.75% |
 
 ---
 

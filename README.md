@@ -50,6 +50,9 @@ energy-consumption-forecasting/
 │   ├── lstm_metrics.csv          # MAE, RMSE, MAPE for LSTM
 │   └── lstm_results.csv          # LSTM forecast vs actuals
 │
+├── app/
+│   └── dashboard.py              # Streamlit interactive dashboard
+│
 ├── requirements.txt
 └── README.md
 ```
@@ -137,6 +140,7 @@ energy-consumption-forecasting/
 | Probabilistic Forecasting | `prophet` |
 | Deep Learning | `torch` (PyTorch) |
 | ML Utilities | `scikit-learn` (scaling, metrics) |
+| Dashboard | `streamlit` |
 | Environment | Python 3.10+, Jupyter Notebook |
 
 ---
@@ -174,6 +178,17 @@ Download `PJME_hourly.csv` from [Kaggle](https://www.kaggle.com/datasets/robiksc
 6. model_comparison.ipynb
 ```
 
+### 6. Launch the Streamlit dashboard
+```bash
+streamlit run app/dashboard.py
+```
+
+The dashboard provides:
+- Side-by-side model performance metrics (MAE, RMSE, MAPE)
+- Interactive forecast vs. actual comparison with model selection
+- Raw data explorer with year-range slider and resample options
+- Residual distribution and residuals-over-time plots
+
 ---
 
 ## Future Improvements
@@ -182,7 +197,6 @@ Download `PJME_hourly.csv` from [Kaggle](https://www.kaggle.com/datasets/robiksc
 - **SARIMA / SARIMAX**: Extend ARIMA with explicit seasonal order and exogenous variables (temperature, calendar features)
 - **Transformer-based forecasting**: Experiment with Temporal Fusion Transformer (TFT) or PatchTST for long-sequence forecasting
 - **Ensemble approach**: Combine Prophet's uncertainty estimates with LSTM point forecasts for a hybrid model
-- **Interactive dashboard**: Build a Streamlit app for real-time forecast visualization and model comparison
 - **Exogenous variables**: Incorporate weather data (temperature, humidity) as covariates to improve accuracy
 
 ---
